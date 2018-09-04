@@ -8,12 +8,11 @@ class BidsController < ApplicationController
       @item = @bid.item
       render "items/show"
     end
-    end
+  end
 
+  private
 
-    private
-      def bid_params
-        params.require(:bid).permit(:amount, :item_id)
-      end
+  def bid_params
+    params.require(:bid).permit(:amount, :item_id)
+  end
 end
-
