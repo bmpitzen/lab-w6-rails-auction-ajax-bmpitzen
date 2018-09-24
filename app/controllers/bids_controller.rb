@@ -3,7 +3,7 @@ class BidsController < ApplicationController
   def create
     @bid = Bid.new(bid_params)
     if @bid.save
-      redirect_to @bid.item, notice: 'Your bid has been recorded!'
+      respond_to :js, @bid.item, notice: 'Your bid has been recorded!'
     else
       @item = @bid.item
       render "items/show"
